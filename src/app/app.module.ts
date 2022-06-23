@@ -6,14 +6,18 @@ import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AuthCallbackComponent } from './auth/auth-callback/auth-callback.component';
-import { HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { AccountComponent } from './account/account.component';
+import {AuthInterceptor} from "./auth/auth.interceptor";
+import {AuthService} from "./auth/auth.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    AuthCallbackComponent
+    AuthCallbackComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,10 @@ import { HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

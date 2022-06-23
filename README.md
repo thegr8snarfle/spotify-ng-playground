@@ -1,6 +1,19 @@
-# SpotifyPg
+# Spotify Playground
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+Basic foundation for playground app to hit the Spotify Web API. 
+
+## Getting Started
+
+This app uses the OpenID _authorization code flow_ to authenticate a spotify developer account against the Spotify Web API.
+
+To get started: 
+1. You'll need a spotify developer account, which can be created here => https://developer.spotify.com/dashboard/login.
+2. You'll need to 'create an app'.
+3. Within that _app_, you'll need to go *Edit Settings* and add two _Redirect URI's_ that are required for this flow to work (these URI's should match the webpack dev server configuration).
+   1. http://localhost:4200/auth/callback
+   2. http://localhost:4200/dashboard
+
+More information can be found here => https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
 
 ## Development server
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, Router} from "@angular/router";
+import { Router} from "@angular/router";
+import {AuthService} from "./auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,12 @@ import {ActivatedRoute, ActivatedRouteSnapshot, Router} from "@angular/router";
 })
 export class AppComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public auth: AuthService) {}
 
   logout() {
     if (window.localStorage) {
-      window.localStorage.removeItem('auth');
-      window.localStorage.removeItem('refresh');
-      this.router.navigate(['auth']);
+      this.auth.logout().then(() => this.router.navigate(['auth']));
+      ;
     }
   }
 }

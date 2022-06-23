@@ -1,3 +1,13 @@
+export interface Credentials {
+  clientId: string;
+  clientSecret: string;
+}
+
+export interface Error {
+  error: string;
+  error_description: string;
+}
+
 export interface Image {
   url: string;
   height: number;

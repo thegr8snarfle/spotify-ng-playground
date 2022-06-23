@@ -6,10 +6,10 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4 justify-between">
               <a href="/home" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
-              <ng-container *ngIf="true">
+              <ng-container *ngIf="!auth.isAuthenticated">
                 <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
               </ng-container>
-              <ng-container *ngIf="true">
+              <ng-container *ngIf="auth.isAuthenticated">
                 <a href="#" (click)="logout()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
               </ng-container>
             </div>

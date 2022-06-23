@@ -737,6 +737,11 @@ select {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .ml-10 {
   margin-left: 2.5rem;
 }
@@ -771,6 +776,10 @@ select {
 
 .min-h-full {
   min-height: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .w-full {
@@ -878,6 +887,10 @@ select {
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-4 {

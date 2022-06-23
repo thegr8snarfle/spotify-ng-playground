@@ -1,0 +1,12 @@
+<section class="account">
+  <h1 class="font-bold">Account Info:</h1>
+
+  <ng-container *ngIf="account$ | async as account">
+    <div class="p-4 w-screen">
+      <p class="my-2">Account ID: {{ account.id }}</p>
+      <p class="my-2">Display Name: {{ account.display_name }}</p>
+<!--      <p class="my-2">Followers: {{ account.followers }}</p>-->
+<!--      <p class="my-2">Account URI: {{ account.uri }}</p>-->
+    </div>
+  </ng-container>
+</section>
