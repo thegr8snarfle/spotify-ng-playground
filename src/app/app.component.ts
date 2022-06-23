@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute, ActivatedRouteSnapshot, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'spotify-pg';
+
+  constructor(private router: Router) {}
+
+  logout() {
+    if (window.localStorage) {
+      window.localStorage.removeItem('auth');
+      window.localStorage.removeItem('refresh');
+      this.router.navigate(['auth']);
+    }
+  }
 }

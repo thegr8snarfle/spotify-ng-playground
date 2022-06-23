@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve -c",
+    "tailwind": "tailwindcss -i ./src/styles/_tailwind.css -o ./src/styles/dist/tailwind_global.css",
+    "build": "npm run tailwind && ng build -c production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,7 +19,9 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@tailwindcss/forms": "^0.5.2",
     "rxjs": "~7.5.0",
+    "tailwindcss": "^3.1.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
