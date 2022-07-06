@@ -14,7 +14,6 @@ export class AppComponent {
   logout() {
     if (window.localStorage) {
       this.auth.logout().then(() => this.router.navigate(['auth']));
-      ;
     }
   }
 }

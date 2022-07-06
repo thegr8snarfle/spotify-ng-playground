@@ -71,6 +71,6 @@ export class AuthService {
       window.localStorage.removeItem(REFRESH_TOKEN_KEY);
       window.localStorage.removeItem(CLIENT_SID_KEY);
       res();
-    })
+    });
   }
 }
