@@ -1,13 +1,14 @@
-import {Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../auth.service";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   public formGroup: FormGroup = this.formBuilder.group({
     clientId: [ '', [ Validators.required ] ],
@@ -15,6 +16,12 @@ export class LoginComponent {
   });
 
   constructor(private formBuilder: FormBuilder, private auth: AuthService) {}
+
+  public ngOnInit(): void {
+    if (environment.clientId) {
+      this.formGroup.patchValue({ clientId: environment?.clientId }, { emitEvent: false });
+    }
+  }
 
   authorize(): void {
     if (this.formGroup.valid) {

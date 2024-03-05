@@ -4,7 +4,8 @@
 
 export const environment = {
   production: null,
-  redirectURL:  null
+  redirectURL:  null,
+  clientId: "1153e2263a284dafb706567a1ddeb53c"
 };
 
 /*

@@ -14,7 +14,7 @@ export class AuthorizeGuard  {
     let isAuthorized: boolean = this.auth.isAuthenticated;
 
     if (!isAuthorized) {
-      return this.router.parseUrl('/auth');
+      return this.router.parseUrl('/login');
     } else {
       return true;
     }
